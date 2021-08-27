@@ -4,15 +4,17 @@ import ClubItem from './ClubItem'
 import { API_URL, ENDPOINTS, HEADERS } from '../config'
 import { SET_CLUBS } from '../actions/clubsActions'
 
-function App () {
+function ClubList () {
   const dispatch = useDispatch()
   const { clubs = [] } = useSelector(state => state.clubs)
+
   useEffect(() => {
     loadClubsList()
       .then(data => {
         dispatch({ type: SET_CLUBS, payload: data })
       })
   }, [])
+
   const loadClubsList = async () => {
     try {
       const result = await fetch(`${API_URL}${ENDPOINTS.Clubs}?$filter=isDeleted eq false`, {
@@ -29,6 +31,7 @@ function App () {
       alert(e.message)
     }
   }
+
   return (
     <div className="app-div">
       <h1 style={{ textAlign: 'center' }}>Список клубов:</h1>
@@ -42,4 +45,4 @@ function App () {
   )
 }
 
-export default App
+export default ClubList
