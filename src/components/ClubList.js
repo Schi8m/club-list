@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ClubItem from './ClubItem'
-import { API_URL, ENDPOINTS, HEADERS } from '../config'
 import { SET_CLUBS } from '../actions/clubsActions'
+import { loadClubsList } from '../Api'
 
 function ClubList () {
   const dispatch = useDispatch()
@@ -14,23 +14,6 @@ function ClubList () {
         dispatch({ type: SET_CLUBS, payload: data })
       })
   }, [])
-
-  const loadClubsList = async () => {
-    try {
-      const result = await fetch(`${API_URL}${ENDPOINTS.Clubs}?$filter=isDeleted eq false`, {
-        headers: HEADERS,
-        method: 'GET'
-      })
-      const data = await result.json()
-      if (result.status === 200) {
-        return data.value
-      } else {
-        alert(data.errors[0].message)
-      }
-    } catch (e) {
-      alert(e.message)
-    }
-  }
 
   return (
     <div className="app-div">

@@ -77,3 +77,20 @@ export async function bookClass (classId) {
     alert(e.message)
   }
 }
+
+export const loadClubsList = async () => {
+  try {
+    const result = await fetch(`${API_URL}${ENDPOINTS.Clubs}?$filter=isDeleted eq false`, {
+      headers: HEADERS,
+      method: 'GET'
+    })
+    const data = await result.json()
+    if (result.status === 200) {
+      return data.value
+    } else {
+      alert(data.errors[0].message)
+    }
+  } catch (e) {
+    alert(e.message)
+  }
+}
