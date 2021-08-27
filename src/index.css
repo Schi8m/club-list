@@ -1,13 +1,69 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+  background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-03/1614786859_152-p-sportivnii-fon-dlya-prezentatsii-175.jpg);
+  color: #fff;
 }
+.app-div{
+  width: 600px;
+  color: #fff;
+  margin: 0 auto;
+}
+.app-li{
+  background-color: #333;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 20px;
+  color:#fff;
+}
+.app-li:hover{
+  background-color: #555;
+}
+.app-ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.classes-board{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 1400px;
+}
+.classes-card{
+  width: 400px;
+  background-color: #333;
+  border-radius: 15px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.booking-btn{
+  width: 100%;
+  height: 40px;
+  font-size: 22px;
+  background-color: #00CC00;
+  border: none;
+  border-radius: 15px;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+}
+.booking-btn:hover{
+  background-color: #00FF99;
+}
+.booking-btn-ds{
+  width: 100%;
+  height: 40px;
+  font-size: 22px;
+  background-color: #900000;
+  border: none;
+  border-radius: 15px;
+}
+.booking-btn-ds:hover{
+  background-color: #ca2e2e;
 }
