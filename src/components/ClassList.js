@@ -37,6 +37,7 @@ function ClassList () {
       .then(data => {
         dispatch({ type: SET_CLASS, payload: data })
       })
+      .catch(e => alert(e.message))
   }, [])
 
   const loadClasses = () => {
@@ -44,7 +45,7 @@ function ClassList () {
       .then(data => {
         dispatch({ type: GET_BOOKED_CLASSES, payload: data })
       })
-      .catch(e => {})
+      .catch(e => alert(e.message))
   }
 
   useEffect(() => {
@@ -55,8 +56,15 @@ function ClassList () {
     const bookMethod = isBooked ? cancelBooking : bookClass
     try {
       await bookMethod(id)
+      if (isBooked) {
+        alert('Тренировка отменена')
+      } else {
+        alert('Тренировка забронирована')
+      }
       loadClasses()
-    } catch (e) {}
+    } catch (e) {
+      alert(e.message)
+    }
   }
 
   return (

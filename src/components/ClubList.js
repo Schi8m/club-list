@@ -13,6 +13,7 @@ function ClubList () {
       .then(data => {
         dispatch({ type: SET_CLUBS, payload: data })
       })
+      .catch(e => alert(e.message))
   }, [])
 
   return (
