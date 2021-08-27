@@ -1,19 +1,14 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ClubItem from './ClubItem'
-import { SET_CLUBS } from '../actions/clubsActions'
-import { loadClubsList } from '../Api'
+import { LOAD_CLUBS } from '../actions/clubsActions'
 
 function ClubList () {
   const dispatch = useDispatch()
   const { clubs = [] } = useSelector(state => state.clubs)
 
   useEffect(() => {
-    loadClubsList()
-      .then(data => {
-        dispatch({ type: SET_CLUBS, payload: data })
-      })
-      .catch(e => alert(e.message))
+    dispatch({ type: LOAD_CLUBS })
   }, [])
 
   return (

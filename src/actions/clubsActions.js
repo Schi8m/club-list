@@ -1,2 +1,3 @@
+export const LOAD_CLUBS = 'LOAD_CLUBS'
 export const SET_CLUBS = 'SET_CLUBS'
 export const REMEMBER_CLUB_NAME = 'REMEMBER_CLUB_NAME'
